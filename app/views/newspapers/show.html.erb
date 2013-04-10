@@ -1,0 +1,10 @@
+<h1>Welcome to <%=@newspaper.title%></h1>
+<h2>Editor: <%=@newspaper.editor%></h2>
+<%= link_to "Create a New Subscription Plan", new_newspaper_subscription_plan_url(@newspaper)%>
+
+<h3>Available Subscriptions</h3>
+<ul>
+<% @newspaper.subscription_plans.each do |subscription| %>
+	<li> <%=subscription.weekly ? "Weekly" : "Daily "%> for: <%= subscription.price%> </li>
+<% end %>
+</ul>

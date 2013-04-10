@@ -1,0 +1,26 @@
+<h1>Make a New Newspaper</h1>
+
+<%= form_for(@newspaper) do |f| %>
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+	<br/>
+	<%= f.label :editor %>
+	<%= f.text_field :editor %>
+	<br/>
+
+	<h2>Add a Subscription Plan</h2>
+
+	<%= f.fields_for :subscription_plan do |subscription_plan_form| %>
+
+		<%= subscription_plan_form.label :price%>
+		<%= subscription_plan_form.text_field :price%>
+		<br/>
+
+		<%= subscription_plan_form.radio_button(:weekly, true)%>
+		<%= subscription_plan_form.label(:weekly_true, "Weekly?")%>
+		<%= subscription_plan_form.radio_button(:weekly, false)%>
+		<%= subscription_plan_form.label(:weekly_true, "Daily?")%>
+	<% end %>
+		<br/>
+	<%= f.submit %>
+<% end %>

@@ -1,0 +1,14 @@
+<h1>Add a Subscription Plan to <%=@newspaper.title%></h1>
+
+<%= form_for(@subscription_plan, :url => newspaper_subscription_plans_url(@newspaper)) do |f| %>
+<%= f.label :price%>
+<%= f.text_field :price%>
+<br/>
+<%= f.radio_button(:weekly, true)%>
+<%= f.label(:weekly_true, "Weekly?")%>
+
+<%= f.radio_button(:weekly, false)%>
+<%= f.label(:weekly_true, "Daily?")%>
+<br/>
+<%= f.submit %>
+<% end %>
