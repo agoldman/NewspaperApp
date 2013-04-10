@@ -8,9 +8,9 @@
 	<%= f.text_field :editor %>
 	<br/>
 
-	<h2>Add a Subscription Plan</h2>
+	<h2>Add Subscription Plans</h2>
 
-	<%= f.fields_for :subscription_plan do |subscription_plan_form| %>
+	<%= f.fields_for :subscription_plans do |subscription_plan_form| %>
 
 		<%= subscription_plan_form.label :price%>
 		<%= subscription_plan_form.text_field :price%>
@@ -19,8 +19,10 @@
 		<%= subscription_plan_form.radio_button(:weekly, true)%>
 		<%= subscription_plan_form.label(:weekly_true, "Weekly?")%>
 		<%= subscription_plan_form.radio_button(:weekly, false)%>
-		<%= subscription_plan_form.label(:weekly_true, "Daily?")%>
+		<%= subscription_plan_form.label(:weekly_false, "Daily?")%>
+				<br/><br/>
 	<% end %>
+
 		<br/>
 	<%= f.submit %>
 <% end %>

@@ -1,0 +1,21 @@
+<h1>Sign Up!</h1>
+
+<%= form_for(@user) do |f| %>
+<%= f.label :name%>
+<%= f.text_field :name%>
+
+<h2>Choose Subscriptions</h2>
+
+	<%= f.fields_for :subscription_plans do |subscription_form| %>
+		<% @newspapers.each do |newspaper| %>
+		<p><%=newspaper.title%></p>
+
+		<select name="subscription_plan_id[]" id="sub_plan_id">
+				<%	newspaper.subscription_plans.each do |p| %>
+				<%= <option value= > %>
+			<%#= collection_select(:subscription, "subscription_plan_id[]", newspaper.subscription_plans, :id, :price,  {:include_blank => true})%>
+		<% end %>
+	<% end %>
+<br/>
+<%= f.submit %>
+<% end %>
