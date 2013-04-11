@@ -14,7 +14,6 @@ class NewspapersController < ApplicationController
   end
 
   def create
-
     @newspaper = Newspaper.new(params[:newspaper])
     if @newspaper.save
       flash[:success] = "You've made a new Newspaper!"

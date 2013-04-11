@@ -5,4 +5,5 @@ NewspaperApp::Application.routes.draw do
     resources :subscription_plans
   end
   resources :users
+  resource :sessions
 end

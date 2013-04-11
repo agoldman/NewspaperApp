@@ -1,5 +1,7 @@
 <h1>Make a New Newspaper</h1>
 
+<%= @newspaper.errors.full_messages[0] %>
+
 <%= form_for(@newspaper) do |f| %>
 	<%= f.label :title %>
 	<%= f.text_field :title %>
